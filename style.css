@@ -1,0 +1,146 @@
+:root {
+    --primary-color: #2ecc71; /* きれいな緑色 */
+    --text-color: #333;
+}
+
+body {
+    font-family: "Nunito", "Helvetica Neue", Arial, sans-serif;
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 60px;
+    min-height: 100vh;
+    margin: 0;
+    /* 背景グラデーションアニメーション */
+    background: linear-gradient(
+        -45deg, 
+        #e0f2ff, /* 淡い青 */
+        #f3e5f5, /* 薄い紫（緩衝材） */
+        #ffe0e0, /* 淡い赤 */
+        #e0f2ff  /* ループ用にもう一度青 */
+    );
+    background-size: 400% 400%;
+    animation: gradientBG 20s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.container {
+    max-width: 480px;
+    width: 90%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(5px);
+    padding: 40px;
+    border-radius: 20px;
+    /* きれいな緑の枠線を追加 */
+    border: 3px solid var(--primary-color);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: all 0.4s ease;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.header h2 {
+    font-size: 1.8rem;
+    margin: 0;
+    color: var(--primary-color);
+    letter-spacing: 1px;
+    /* ポップな緑色の点線を追加 */
+    border-bottom: 4px dotted var(--primary-color);
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.form-group, .conditional-section {
+    margin-bottom: 24px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #555;
+}
+
+select {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #e5e7eb;
+    border-radius: 12px;
+    font-size: 16px;
+    background-color: #fff;
+    transition: all 0.2s;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%232ecc71'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 20px;
+    color: #333;
+}
+
+select:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(46, 204, 113, 0.1);
+}
+
+.conditional-section {
+    display: none;
+    animation: slideDown 0.4s ease forwards;
+    opacity: 0;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 16px;
+    border-radius: 12px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 15px;
+    transition: all 0.3s;
+    box-shadow: 0 4px 6px rgba(46, 204, 113, 0.2);
+}
+
+button:hover:not(:disabled) {
+    background-color: #27ae60;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(46, 204, 113, 0.3);
+}
+
+button:disabled {
+    background-color: #d1d5db;
+    cursor: not-allowed;
+    color: #9ca3af;
+    box-shadow: none;
+}
+
+/* 送信完了後のメッセージ */
+#thanks-message {
+    text-align: center;
+    padding: 30px 0;
+}
+
+.icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    /*完了アイコンも緑に*/
+    color: var(--primary-color);
+}

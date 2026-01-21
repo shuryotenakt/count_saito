@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ご来場者アンケート</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <div id="form-container">
+        <div class="header">
+            <h2>ご来場者アンケート</h2>
+        </div>
+
+        <form id="surveyForm">
+            <div class="form-group">
+                <label>区分</label>
+                <select id="category" name="category" onchange="updateFormDisplay()" required>
+                    <option value="">選択してください</option>
+                    <option value="highschool">高校生</option>
+                    <option value="student">在校生</option>
+                    <option value="parent">保護者</option>
+                    <option value="company">企業様</option>
+                    <option value="general">一般</option>
+                </select>
+            </div>
+
+            <div id="dynamic-area">
+                <div id="section-highschool" class="conditional-section">
+                    <label>本校を知ったきっかけは？</label>
+                    <select name="highschool_info" class="required-input">
+                        <option value="">選択してください</option>
+                        <option value="SNS">SNS</option>
+                        <option value="HP・検索">HP・検索</option>
+                        <option value="先生の紹介">先生の紹介</option>
+                        <option value="友達・知人">友達・知人</option>
+                        <option value="その他">その他</option>
+                    </select>
+                </div>
+
+                <div id="section-student" class="conditional-section">
+                    <label>本日の役割・目的は？</label>
+                    <select name="student_info" class="required-input">
+                        <option value="">選択してください</option>
+                        <option value="運営スタッフ">運営スタッフ</option>
+                        <option value="展示・発表">展示・発表</option>
+                        <option value="その他">その他</option>
+                    </select>
+                </div>
+
+                <div id="section-company" class="conditional-section">
+                    <label>関心のある分野は？</label>
+                    <select name="company_info" class="required-input">
+                        <option value="">選択してください</option>
+                        <option value="採用関連">採用関連</option>
+                        <option value="産学連携">産学連携</option>
+                        <option value="見学・視察">見学・視察</option>
+                        <option value="その他">その他</option>
+                    </select>
+                </div>
+
+                <div id="section-satisfaction" class="conditional-section">
+                    <label>本日のイベントの満足度は？</label>
+                    <select name="satisfaction" class="required-input">
+                        <option value="">選択してください</option>
+                        <option value="大変満足">大変満足</option>
+                        <option value="満足">満足</option>
+                        <option value="普通">普通</option>
+                        <option value="やや不満">やや不満</option>
+                        <option value="不満">不満</option>
+                    </select>
+                </div>
+            </div>
+
+            <button type="submit" id="submitBtn" disabled>回答を送信する</button>
+        </form>
+    </div>
+
+    <div id="thanks-message" style="display: none;">
+        <div class="icon">✨</div>
+        <h2>ご来場ありがとうございました！</h2>
+        <p>今後とも本校をよろしくお願いします。</p>
+    </div>
+</div>
+
+<script src="move.js"></script>
+</body>
+</html>
