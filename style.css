@@ -15,10 +15,10 @@ body {
     /* 背景グラデーションアニメーション */
     background: linear-gradient(
         -45deg, 
-        #e0f2ff, /* 淡い青 */
-        #f3e5f5, /* 薄い紫（緩衝材） */
-        #ffe0e0, /* 淡い赤 */
-        #e0f2ff  /* ループ用にもう一度青 */
+        #c2e4fc, /* 淡い青 */
+        #f9d2ff, /* 薄い紫（緩衝材） */
+        #ffcaca, /* 淡い赤 */
+        #bae2ff  /* ループ用にもう一度青 */
     );
     background-size: 400% 400%;
     animation: gradientBG 20s ease infinite;
