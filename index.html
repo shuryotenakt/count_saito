@@ -3,88 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ご来場者アンケート</title>
+    <title>修了展来場受付</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="container">
+        <header>
+            <div class="title-wrapper">
+                <span class="decor-line"></span>
+                <h1 class="main-title">THANKS<br>FOR<br>VISITING</h1>
+                <span class="decor-line"></span>
+            </div>
+            <p class="sub-title">
+                修了展へのご来場心より感謝申し上げます<br>
+                2025年度の修了展はお楽しみ頂けましたでしょうか？
+            </p>
+        </header>
 
-<div class="container">
-    <div id="form-container">
-        <div class="header">
-            <h2>ご来場者アンケート</h2>
-        </div>
-
-        <form id="surveyForm">
-            <div class="form-group">
-                <label>区分</label>
-                <select id="category" name="category" onchange="updateFormDisplay()" required>
-                    <option value="">選択してください</option>
-                    <option value="highschool">高校生</option>
-                    <option value="student">在校生</option>
-                    <option value="parent">保護者</option>
-                    <option value="company">企業様</option>
-                    <option value="general">一般</option>
-                </select>
+        <main>
+            <div class="certificate-frame">
+                <img src="certificate.png" alt="修了展来場証書" class="cert-img" id="cert-display">
             </div>
 
-            <div id="dynamic-area">
-                <div id="section-highschool" class="conditional-section">
-                    <label>本校を知ったきっかけは？</label>
-                    <select name="highschool_info" class="required-input">
-                        <option value="">選択してください</option>
-                        <option value="SNS">SNS</option>
-                        <option value="HP・検索">HP・検索</option>
-                        <option value="先生の紹介">先生の紹介</option>
-                        <option value="友達・知人">友達・知人</option>
-                        <option value="その他">その他</option>
-                    </select>
-                </div>
+            <section class="registration-area">
+                <p class="guide-text">ご来場者数を正確に把握するため、<br>区分を選択して記録をお願いします。</p>
+                <form id="attendance-form">
+                    <div class="category-list">
+                        <label class="category-label">
+                            <input type="radio" name="category" value="在校生" required>
+                            <span class="custom-radio"></span>在校生
+                        </label>
+                        <label class="category-label">
+                            <input type="radio" name="category" value="卒業生">
+                            <span class="custom-radio"></span>卒業生
+                        </label>
+                        <label class="category-label">
+                            <input type="radio" name="category" value="入学予定・受験予定">
+                            <span class="custom-radio"></span>入学予定<br>受験予定
+                        </label>
+                        <label class="category-label">
+                            <input type="radio" name="category" value="保護者">
+                            <span class="custom-radio"></span>保護者
+                        </label>
+                        <label class="category-label">
+                            <input type="radio" name="category" value="一般">
+                            <span class="custom-radio"></span>一般
+                        </label>
+                        <label class="category-label">
+                            <input type="radio" name="category" value="その他">
+                            <span class="custom-radio"></span>その他
+                        </label>
+                    </div>
+                    <button type="submit" id="submit-btn" class="main-btn">来場を記録する</button>
+                </form>
+            </section>
 
-                <div id="section-student" class="conditional-section">
-                    <label>本日の役割・目的は？</label>
-                    <select name="student_info" class="required-input">
-                        <option value="">選択してください</option>
-                        <option value="運営スタッフ">運営スタッフ</option>
-                        <option value="展示・発表">展示・発表</option>
-                        <option value="その他">その他</option>
-                    </select>
-                </div>
+            <section id="survey-area" class="survey-area" style="display:none;">
+                <p class="thanks-msg">記録が完了しました！</p>
+                <p class="sub-guide">今後の制作の励みになりますので、アンケートにもご協力いただけると嬉しいです。</p>
+                <a href="https://forms.gle/1t4Zr68ccb32TSVXA" target="_blank" class="survey-btn">アンケートに回答する</a>
+            </section>
+        </main>
 
-                <div id="section-company" class="conditional-section">
-                    <label>関心のある分野は？</label>
-                    <select name="company_info" class="required-input">
-                        <option value="">選択してください</option>
-                        <option value="採用関連">採用関連</option>
-                        <option value="産学連携">産学連携</option>
-                        <option value="見学・視察">見学・視察</option>
-                        <option value="その他">その他</option>
-                    </select>
-                </div>
-
-                <div id="section-satisfaction" class="conditional-section">
-                    <label>本日のイベントの満足度は？</label>
-                    <select name="satisfaction" class="required-input">
-                        <option value="">選択してください</option>
-                        <option value="大変満足">大変満足</option>
-                        <option value="満足">満足</option>
-                        <option value="普通">普通</option>
-                        <option value="やや不満">やや不満</option>
-                        <option value="不満">不満</option>
-                    </select>
-                </div>
-            </div>
-
-            <button type="submit" id="submitBtn" disabled>回答を送信する</button>
-        </form>
+        <footer>
+            <p class="copyright">&copy; 2026 AKITA SEIJU All Rights Reserved.</p>
+        </footer>
     </div>
-
-    <div id="thanks-message" style="display: none;">
-        <div class="icon">✨</div>
-        <h2>ご来場ありがとうございました！</h2>
-        <p>今後とも本校をよろしくお願いします。</p>
-    </div>
-</div>
-
-<script src="move.js"></script>
+    <script src="move.js"></script>
 </body>
 </html>
