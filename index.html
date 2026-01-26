@@ -16,7 +16,7 @@
                 <span class="decor-line"></span>
             </div>
             <p class="sub-title">
-                修了展へのご来場心より感謝申し上げます<br>
+                修了展へのご来場、心より感謝申し上げます。<br>
                 2025年度の修了展はお楽しみ頂けましたでしょうか？
             </p>
         </header>
@@ -30,31 +30,28 @@
                 <p class="guide-text">ご来場者数を正確に把握するため、<br>区分を選択して記録をお願いします。</p>
                 <form id="attendance-form">
                     <div class="category-list">
-                        <label class="category-label">
-                            <input type="radio" name="category" value="在校生" required>
-                            <span class="custom-radio"></span>在校生
-                        </label>
-                        <label class="category-label">
-                            <input type="radio" name="category" value="卒業生">
-                            <span class="custom-radio"></span>卒業生
-                        </label>
-                        <label class="category-label">
-                            <input type="radio" name="category" value="入学予定・受験予定">
-                            <span class="custom-radio"></span>入学予定<br>受験予定
-                        </label>
-                        <label class="category-label">
-                            <input type="radio" name="category" value="保護者">
-                            <span class="custom-radio"></span>保護者
-                        </label>
-                        <label class="category-label">
-                            <input type="radio" name="category" value="一般">
-                            <span class="custom-radio"></span>一般
-                        </label>
-                        <label class="category-label">
-                            <input type="radio" name="category" value="その他">
-                            <span class="custom-radio"></span>その他
-                        </label>
+                        <label class="category-label"><input type="radio" name="category" value="在校生" required><span class="custom-radio"></span>在校生</label>
+                        <label class="category-label"><input type="radio" name="category" value="卒業生"><span class="custom-radio"></span>卒業生</label>
+                        <label class="category-label"><input type="radio" name="category" value="入学予定・受験予定"><span class="custom-radio"></span>入学予定・受験予定</label>
+                        <label class="category-label"><input type="radio" name="category" value="保護者"><span class="custom-radio"></span>保護者</label>
+                        <label class="category-label"><input type="radio" name="category" value="一般"><span class="custom-radio"></span>一般</label>
+                        <label class="category-label"><input type="radio" name="category" value="その他"><span class="custom-radio"></span>その他</label>
                     </div>
+
+                    <div id="college-section" style="display: none; margin-top: 1.5rem; border-top: 2px dashed var(--gaming-green); padding-top: 1.5rem;">
+                        <p class="guide-text" style="color: var(--gaming-green); font-weight: bold; margin-bottom: 15px;">所属カレッジを選択してください</p>
+                        <div class="category-list">
+                            <label class="category-label"><input type="radio" name="college" value="パフォーミングアーツカレッジ"><span class="custom-radio"></span>パフォーミングアーツ</label>
+                            <label class="category-label"><input type="radio" name="college" value="ゲームカレッジ"><span class="custom-radio"></span>ゲーム</label>
+                            <label class="category-label"><input type="radio" name="college" value="ITカレッジ"><span class="custom-radio"></span>IT</label>
+                            <label class="category-label"><input type="radio" name="college" value="e-Sportsカレッジ"><span class="custom-radio"></span>e-Sports</label>
+                            <label class="category-label"><input type="radio" name="college" value="動画クリエイター"><span class="custom-radio"></span>動画</label>
+                            <label class="category-label"><input type="radio" name="college" value="マンガ・イラストカレッジ"><span class="custom-radio"></span>マンガ・イラスト</label>
+                            <label class="category-label"><input type="radio" name="college" value="ビジネスカレッジ"><span class="custom-radio"></span>ビジネス</label>
+                            <label class="category-label"><input type="radio" name="college" value="その他カレッジ"><span class="custom-radio"></span>その他</label>
+                        </div>
+                    </div>
+
                     <button type="submit" id="submit-btn" class="main-btn">来場を記録する</button>
                 </form>
             </section>

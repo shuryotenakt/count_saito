@@ -13,6 +13,7 @@ body {
     background: linear-gradient(-45deg, #ffdada, #eadaff, #daeaff);
     background-size: 400% 400%;
     animation: gradientBG 15s ease infinite;
+    overflow-x: hidden;
 }
 
 @keyframes gradientBG {
@@ -34,7 +35,6 @@ body {
     box-sizing: border-box;
 }
 
-/* 復活した装飾ラインの設定 */
 .title-wrapper {
     display: flex;
     align-items: center;
@@ -52,7 +52,7 @@ body {
 
 .main-title {
     font-family: var(--accent-font);
-    font-size: 2.2rem; /* PCでは大きめに表示 */
+    font-size: 2.2rem;
     line-height: 1.1;
     letter-spacing: 2px;
     margin: 0;
@@ -66,12 +66,11 @@ body {
     margin-bottom: 1.5rem;
 }
 
-/* 選択肢のボタンスタイル */
 .category-list {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 12px;
-    margin: 2rem 0;
+    margin: 1.5rem 0;
 }
 
 .category-label {
@@ -121,7 +120,6 @@ body {
 .main-btn {
     display: block;
     width: 100%;
-    max-width: 100%;
     padding: 16px;
     border-radius: 50px;
     font-family: var(--accent-font);
@@ -131,9 +129,8 @@ body {
     cursor: pointer;
 }
 
-.survey-btn{
+.survey-btn {
     display: block;
-    max-width: 100%;
     padding: 16px;
     border-radius: 50px;
     font-family: var(--accent-font);
@@ -142,19 +139,25 @@ body {
     border: 2px solid var(--gaming-green);
     cursor: pointer;
 }
+
 .main-btn { background: #1a1a1a; color: var(--gaming-green); }
 .survey-btn { background: var(--gaming-green); color: #000; text-decoration: none; margin-top: 15px; }
 
-.certificate-frame { margin: 1rem 0; border: 1px solid #ddd; background: #fff; }
-.cert-img { width: 100%; display: block; }
-.copyright { margin-top: 2rem; font-size: 0.7rem; color: #888; }
+.certificate-frame {
+    margin: 1rem 0;
+    border: 1px solid #ddd;
+    background: #fff;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+}
 
-/* スマホ用レスポンシブ調整 */
+.cert-img { max-width: 100%; height: auto; display: block; margin: 0 auto; }
+
+.copyright { margin-top: 2rem; font-size: 0.7rem; color: #888; font-family: var(--accent-font); }
+
 @media screen and (max-width: 480px) {
-    .main-title {
-        font-size: 1.8rem !important; /* スマホで1.8remを維持 */
-    }
+    .main-title { font-size: 1.8rem !important; }
     .container { padding: 1.2rem; }
     .category-label { font-size: 0.75rem; }
-    .title-wrapper { gap: 8px; }
 }
