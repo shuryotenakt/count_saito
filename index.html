@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="cert-popup" class="modal-overlay" style="display: none;">
+    <div id="cert-popup" class="modal-overlay">
         <canvas id="fireworks-canvas"></canvas>
         <div class="popup-content">
             <div class="certificate-frame">
@@ -18,7 +18,7 @@
         </div>
     </div>
 
-    <div id="image-modal" class="modal-overlay" style="display: none;">
+    <div id="image-modal" class="modal-overlay">
         <div class="modal-controls">
             <a href="certificate_2.png" download="certificate.png" class="icon-btn">SAVE</a>
             <button id="close-image-modal" class="icon-btn">CLOSE</button>
@@ -32,7 +32,7 @@
         <header>
             <div class="title-wrapper">
                 <span class="decor-line"></span>
-                <h1 class="main-title glitch" id="typing-title" style="min-height: 2.2em;"></h1>
+                <h1 class="main-title glitch" id="typing-title"></h1>
                 <span class="decor-line"></span>
             </div>
             <p class="sub-title">修了展へのご来場心より感謝申し上げます<br>2025年度の修了展はお楽しみ頂けましたでしょうか？</p>
@@ -51,7 +51,7 @@
                         <label class="category-label"><input type="radio" name="category" value="その他"><span class="custom-radio"></span>その他</label>
                     </div>
 
-                    <div id="college-section" style="display: none; margin-top: 1.5rem; border-top: 2px dashed var(--gaming-green); padding-top: 1.5rem;">
+                    <div id="college-section" class="hidden-section">
                         <p id="college-guide" class="important-guide"></p>
                         <div class="category-list">
                             <label class="category-label"><input type="radio" name="college" value="パフォーミングアーツカレッジ"><span class="custom-radio"></span>パフォーミング<br>アーツ</label>
@@ -65,7 +65,7 @@
                         </div>
                     </div>
 
-                    <div id="general-section" style="display: none; margin-top: 1.5rem; border-top: 2px dashed var(--gaming-green); padding-top: 1.5rem;">
+                    <div id="general-section" class="hidden-section">
                         <p class="important-guide">詳細を選択してください</p>
                         <div class="category-list">
                             <label class="category-label"><input type="radio" name="generalDetail" value="ご親族"><span class="custom-radio"></span>ご親族</label>
@@ -75,12 +75,12 @@
                         </div>
                     </div>
 
-                    <button type="submit" id="submit-btn" class="main-btn">来場を記録する</button>
+                    <button type="submit" id="submit-btn" class="main-btn" disabled>来場を記録する</button>
                 </form>
             </section>
 
-            <section id="survey-area" class="survey-area" style="display:none;">
-                <p style="color:#888;font-size:0.7rem;margin-bottom:5px;">画像をタップして保存できます</p>
+            <section id="survey-area" style="display:none;">
+                <p class="guide-text-small">画像をタップして保存できます</p>
                 <div class="certificate-frame" id="cert-tap-area" style="cursor: pointer;">
                     <img src="certificate_2.png" alt="修了展来場証書" class="cert-img">
                 </div>
@@ -89,6 +89,7 @@
                 <a href="https://forms.gle/1t4Zr68ccb32TSVXA" target="_blank" class="survey-btn">アンケートに回答する</a>
             </section>
         </main>
+
         <footer><p class="copyright">&copy; 2026 AKITA SEIJU All Rights Reserved.</p></footer>
     </div>
     <script src="move.js"></script>
